@@ -1,0 +1,16 @@
+<tkinter>
+    <head>
+        <title>Ceci est un test de balise title</title>
+        <geometry>700x500</geometry>
+    </head>
+    <body>
+        <frame weight="3">
+            <label name="compteur">0</label>
+            <button action="add" args="{'frame': 'compteur'}">Add</button>
+        </frame>
+        <frame weight="1">
+            <label>Enable</label>
+            <button action="display">Toggle</button>
+        </frame>
+    </body>
+</tkinter>

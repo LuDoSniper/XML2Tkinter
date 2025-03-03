@@ -1,0 +1,2 @@
+"actions" est la liste des fonctions que le convertisseur va appeler. C'est un dictionnaire clé valeur où les clés sont les noms des fonctions et les valeurs sont les fonctions.
+"args" sont les arguments à injecter dans les fonctions dans "actions". args est un dico. Les clés sont les noms des arguments, et les valeurs sont les noms des arguments nommés dans "name".
