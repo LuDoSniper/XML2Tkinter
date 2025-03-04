@@ -6,11 +6,11 @@
     <body>
         <frame weight="3">
             <label name="compteur">0</label>
-            <button action="add" args="{'frame': 'compteur'}">Add</button>
+            <button name="btn_compteur" action="add" args="{'label': 'compteur'}">Add</button>
         </frame>
         <frame weight="1">
-            <label>Enable</label>
-            <button action="display">Toggle</button>
+            <label name="toggle">Enabled</label>
+            <button action="toggle" args="{'label': 'toggle', 'button': 'btn_compteur'}">Toggle</button>
         </frame>
     </body>
 </tkinter>

@@ -44,6 +44,9 @@ def generate_nodes(container, node: ET.Element, parent=None, actions: dict[str: 
         command = "" # Valeur par défaut de TKinter
         args = None
 
+        button = tk.Button(container, text=node.text)
+        if 'name' in node.attrib:
+            named_elements[node.attrib['name']] = button
         if 'args' in node.attrib:
             args = ast.literal_eval(node.attrib['args'])
             new_args = {}
@@ -60,10 +63,8 @@ def generate_nodes(container, node: ET.Element, parent=None, actions: dict[str: 
                     command = actions[node.attrib['action']]
             else:
                 raise ValueError(f"Action '{node.attrib['action']}' not found in actions.")
-        button = tk.Button(container, text=node.text, command=command)
+        button.config(command=command)
         button.pack()
-        if 'name' in node.attrib:
-            named_elements[node.attrib['name']] = button
     
     else:
         raise Exception(f"Invalid tag '{node.tag}'.")

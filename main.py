@@ -1,13 +1,14 @@
 from . import converter
 
-def display():
-    print("caca")
+def toggle(label, button):
+    label.config(text="Disabled" if label.cget("text") == "Enabled" else "Enabled")
+    button.config(state=f"{'active' if label.cget('text') == 'Enabled' else 'disabled'}")
 
-def add(frame):
-    frame.config(text=str(int(frame.cget("text"))+1))
+def add(label):
+    label.config(text=str(int(label.cget("text"))+1))
 
 actions = {
-    'display': display,
+    'toggle': toggle,
     'add': add
 }
 
